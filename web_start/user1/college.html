@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>College Details</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- BACK BUTTON -->
+  <a href="text.html" style="display:inline-block;margin-bottom:15px;">
+    ← Back
+  </a>
+
+  <!-- DETAIL SECTION -->
+  <div id="detailContainer">
+    <h2>Loading...</h2>
+  </div>
+
+</div>
+
+<!-- FIREBASE -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+
+<!-- YOUR FIREBASE CONFIG -->
+<script src="../admin/firebase.js"></script>
+
+<!-- DETAIL PAGE SCRIPT (INLINE FIXED) -->
+<script>
+
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+const container = document.getElementById("detailContainer");
+
+if (!id) {
+  container.innerHTML = "<h2>No College Selected</h2>";
+} else {
+
+  db.collection("colleges").doc(id).get().then(doc => {
+
+    if (!doc.exists) {
+      container.innerHTML = "<h2>College Not Found</h2>";
+      return;
+    }
+
+    const d = doc.data();
+
+    container.innerHTML = `
+      
+      <div class="detail-card">
+
+        <img src="${d.imageUrl || ''}" class="big-logo" onerror="this.style.display='none'">
+
+        <h1>${d.name || ''}</h1>
+        <p>${d.location || ''}</p>
+        <small>${d.category || ''}</small>
+
+        <hr>
+
+        <h3>Courses</h3>
+
+        <div class="course-box">
+          ${
+            d.courses && d.courses.length
+            ? d.courses.map(c => `<div class="course-item">${c}</div>`).join("")
+            : "<p>No Courses Available</p>"
+          }
+        </div>
+
+      </div>
+
+    `;
+
+  }).catch(err => {
+    console.error(err);
+    container.innerHTML = "<h2>Error Loading Data</h2>";
+  });
+
+}
+
+</script>
+
+</body>
+</html>
