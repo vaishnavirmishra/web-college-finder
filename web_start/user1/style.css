@@ -4,7 +4,6 @@
 /* ======================
    HEADER
 ====================== */
-
 .header {
     height: 90px;
     display: flex;
@@ -15,14 +14,16 @@
 
 .logo-section {
     width: 180px;
-    height: 180px;
-    overflow: hidden;
+    height: 80px;
+    display: flex;
+    align-items: center;
 }
 
 .header-logo {
-    width: 250px;
-    height: 250px;
-    transform: translate(-18px, -52px);
+    max-height: 60px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
 }
 
 .navbar {
