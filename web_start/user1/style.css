@@ -14,16 +14,17 @@
 }
 
 .logo-section {
-    width: 300px;
-    height: 300px;
+    width: 180px;
+    height: 90px;
     overflow: hidden;
 }
 
 .header-logo {
-    width: 300px;
-    height: 300px;
-    transform: translate(-30px, -80px);
+    width: 250px;
+    height: auto;
+    transform: translate(-18px, -52px);
 }
+
 .navbar {
     display: flex;
     gap: 50px;
