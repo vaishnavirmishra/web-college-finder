@@ -6,26 +6,24 @@
 ====================== */
 
 .header {
-    height: 100px;
-    background: #fff;
+    height: 90px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 80px;
+    padding: 0 60px;
 }
 
 .logo-section {
-    display: flex;
-    align-items: center;
+    width: 250px;
+    height: 70px;
+    overflow: hidden;
 }
 
 .header-logo {
-    height: 55px;      /* Adjust between 50-70px */
-    width: auto;
-    display: block;
-    object-fit: contain;
+    width: 420px;
+    height: auto;
+    transform: translate(-30px, -80px);
 }
-
 .navbar {
     display: flex;
     gap: 50px;
