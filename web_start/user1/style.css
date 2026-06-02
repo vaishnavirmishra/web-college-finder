@@ -22,7 +22,7 @@
 .header-logo {
     max-height: 60px;
     width: auto;
-    height: auto;
+    height: 40px;
     object-fit: contain;
 }
 
