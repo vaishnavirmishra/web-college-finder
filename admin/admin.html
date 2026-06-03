@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <h2>Admin Panel</h2>
+
+  <!-- COLLEGE INPUT -->
+  <input id="name" class="input" placeholder="College Name">
+  <input id="location" class="input" placeholder="Location">
+  <input id="imageUrl" class="input" placeholder="Image URL">
+
+  <!-- CATEGORY -->
+  <select id="category" class="input">
+    <option value="technical">Technical</option>
+    <option value="non-technical">Non-Technical</option>
+    <option value="medical">Medical</option>
+  </select>
+
+  <hr>
+
+  <!-- COURSES -->
+  <h3>Courses</h3>
+
+  <div class="row">
+    <input id="courseInput" class="input" placeholder="Add Course">
+    <button class="btn" onclick="addCourseTemp()">Add</button>
+  </div>
+
+  <ul id="courseList"></ul>
+
+  <button class="btn" onclick="addCollege()">Save College</button>
+
+  <hr>
+
+  <!-- LIST -->
+  <h3>Saved Colleges</h3>
+
+  <p>Total: <span id="count">0</span></p>
+
+  <div id="list"></div>
+
+</div>
+
+<!-- FIREBASE -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+
+<script src="firebase.js"></script>
+<script src="admin.js"></script>
+
+</body>
+</html>
