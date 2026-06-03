@@ -41,7 +41,7 @@ function render(data) {
 
 /* OPEN DETAIL PAGE */
 function openCollege(id) {
-  window.location.href = `college.html?id=${id}`;
+  window.location.href = `web_start/user1/college.html?id=${id}`;
 }
 
 /* SEARCH */
