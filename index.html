@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>College Finder</title>
+  <link rel="stylesheet" href="web_start/user1/style.css">
+</head>
+
+<body>
+
+<!-- HEADER START -->
+<header class="header">
+
+  <div class="logo-section">
+   <img src="web_start/user1/logoex.png" alt="Logo" width="300" height="80">
+  </div>
+
+  <nav class="navbar">
+
+    <a href="https://exampoll.online/" class="active">Home</a>
+        <a href="https://exampoll.online/colleges">College & Universities</a>
+
+
+    
+
+    <a href="https://exampoll.online/education-loans">Education Loans</a>
+    <a href="https://exampoll.online/#about">About Us</a>
+    <a href="https://exampoll.online/#contact">Contact Us</a>
+   
+
+  </nav>
+
+</header>
+<!-- HEADER END -->
+
+<div class="container">
+
+  <!-- SEARCH BAR -->
+  <input
+    id="searchBox"
+    class="search-box"
+    placeholder="Search College here..."
+  >
+
+  <!-- COLLEGES -->
+  <div id="collegeContainer"></div>
+
+</div>
+
+<!-- FIREBASE -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+
+<script src="../admin/firebase.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
